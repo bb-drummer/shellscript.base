@@ -3,9 +3,10 @@
 
 ### USAGE: 
 
-`./{scriptname} {arguments and parameters}`
+`./{(path_to)your_final_scriptname} {arguments and parameters}`
    
 
+   since this script template is functional but represents only a very basic setup, simply checkout or copy&paste and modify it to your needs
 
 
 ### DESCRIPTION:
