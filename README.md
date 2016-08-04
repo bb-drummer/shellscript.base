@@ -16,22 +16,28 @@
 ### OPTIONS:
 
 
-*	`-t targetpath`                        target path for php installation (default '/usr/local/php_PHPVERSION_-cgi/')
+*	`-t targetpath`    target path for php installation (default '...')
 *	`--target-path targetpath`
 *	`--targetpath targetpath`
-*	`-l logfile`                    target path to installer logfile (default './php2plesk.log')
+*	`-l logfile`    target path to installer logfile (default '...')
 *	`--log-file logfile`
 *	`--logfile logfile`
-*	`-T tmppath`                        installer path for temporary file storage (default '/tmp/')
+*	`-T tmppath`    installer path for temporary file storage (default '...')
 *	`--tmp-path tmppath`
 *	`--tmppath tmppath`
 
-*	`-n`                             be non-interactive (overranks '-e' option)
+
+*	`-n`    be non-interactive
 *	`--non-interactive`
 *	`--noninteractive`
-*	`-h`                             show this message
+
+
+*	`--skip-log`    do not write to logfile
+*	`--disable-log`
+
+*	`-h`    show this message
 *	`--help`
-*	`-v`                             verbose output
+*	`-v    verbose output
 *	`--verbose`
 
 
