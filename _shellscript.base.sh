@@ -19,13 +19,11 @@ LICENCE="Apache 2.0"
 VERSION="1.0.0"
 
 ## info texts
-DESCRIPTION=`cat << EOF
+DESCRIPTION="
     basic shell script template...
-EOF`;
+";
 
-AVAILABLE_OPTIONS=`cat << EOF
-    [more to come...]
-
+AVAILABLE_OPTIONS="
     -t targetpath                target path script (default ${TARGETPATH})
     --target-path targetpath
     --targetpath targetpath
@@ -35,29 +33,29 @@ AVAILABLE_OPTIONS=`cat << EOF
     --logfile logfile
 
     -T tmppath                   path for temporary file storage (default ${TMPPATH})
-    --tmp-path tmppath 
-    --tmppath tmppath 
+    --tmp-path tmppath
+    --tmppath tmppath
 
-    -n                           be non-interactive 
+    -n                           be non-interactive
     --non-interactive
     --noninteractive
 
     --skip-log                   do not write to script logfile, alternatives: --disable-log
     -h                           show this message, alternatives: --help
     -v                           verbose output, alternatives: --verbose
-EOF`;
+";
 
-EXAMPLES=`cat << EOF
+EXAMPLES="
     [more to come...]
-EOF`;
+";
 
-DISCLAIMER=`cat << EOF
+DISCLAIMER="
     THIS SCRIPT COMES WITH ABSOLUTELY NO WARRANTY !!! USE AT YOUR OWN RISK !!!
-EOF`;
+";
 
-CHANGELOG=`cat << EOF
+CHANGELOG="
     2016-08-04     : (bba) initial release 
-EOF`;
+";
 
 ## init vars, parameter defaults
 TARGETPATH=`pwd`
@@ -105,10 +103,10 @@ scriptinfo()
 cat << EOF
 
 CONFIGURATION:
-    VERSION        = ${SCRIPT_VERSION} 
-    TARGETPATH     = ${SCRIPT_TARGETPATH}
-    TMPPATH        = ${SCRIPT_TMPPATH}
-    LOGFILE        = ${SCRIPT_LOGFILE}
+    VERSION        = ${VERSION} 
+    TARGETPATH     = ${TARGETPATH}
+    TMPPATH        = ${TMPPATH}
+    LOGFILE        = ${LOGFILE}
 
 
 OS:
@@ -150,7 +148,7 @@ EOF
 scriptusage()
 {
 cat << EOF
-$0 ${TITLE}, v${VERSION}
+${TITLE}, v${VERSION}
 
 USAGE: 
     $0 {arguments}
@@ -161,12 +159,10 @@ ${DESCRIPTION}
 
 
 OPTIONS:
-
 ${AVAILABLE_OPTIONS}
 
 
 EXAMPLES:
-
 ${EXAMPLES}
     
 
@@ -337,6 +333,18 @@ while true; do
             shift    
             scriptusage
             scriptvendor
+            exit
+            ;;
+
+        -i|--info)
+            shift    
+            scriptinfo
+            exit
+            ;;
+
+        --version)
+            shift    
+            echo "v"${VERSION}
             exit
             ;;
 
