@@ -12,8 +12,52 @@
 ##
 ## global vars
 ##
+TITLE="Shelll Script Base Template"
+HOMEPAGE="https://gitlab.bjoernbartels.earth/groups/shellscripts"
+COPYRIGHT="(c) 2016 Björn Bartels, coding@bjoernbartels.earth"
+LICENCE="Apache 2.0"
 VERSION="1.0.0"
-CDIR=`pwd`
+
+## info texts
+DESCRIPTION=`cat << EOF
+    basic shell script template...
+EOF`;
+
+AVAILABLE_OPTIONS=`cat << EOF
+    [more to come...]
+
+    -t targetpath                target path script (default ${TARGETPATH})
+    --target-path targetpath
+    --targetpath targetpath
+
+    -l logfile                   target path to script logfile (default ${LOGFILE})
+    --log-file logfile
+    --logfile logfile
+
+    -T tmppath                   path for temporary file storage (default ${TMPPATH})
+    --tmp-path tmppath 
+    --tmppath tmppath 
+
+    -n                           be non-interactive 
+    --non-interactive
+    --noninteractive
+
+    --skip-log                   do not write to script logfile, alternatives: --disable-log
+    -h                           show this message, alternatives: --help
+    -v                           verbose output, alternatives: --verbose
+EOF`;
+
+EXAMPLES=`cat << EOF
+    [more to come...]
+EOF`;
+
+DISCLAIMER=`cat << EOF
+    THIS SCRIPT COMES WITH ABSOLUTELY NO WARRANTY !!! USE AT YOUR OWN RISK !!!
+EOF`;
+
+CHANGELOG=`cat << EOF
+    2016-08-04     : (bba) initial release 
+EOF`;
 
 ## init vars, parameter defaults
 TARGETPATH=`pwd`
@@ -23,6 +67,7 @@ LOGFILE=$TMPPATH"/bash.log"
 SKIP_LOG=0
 VERBOSE=1
 NONINTERACTIVE=0
+CDIR=`pwd`
 
 
 
@@ -65,6 +110,7 @@ CONFIGURATION:
     TMPPATH        = ${SCRIPT_TMPPATH}
     LOGFILE        = ${SCRIPT_LOGFILE}
 
+
 OS:
     OS             = ${OS}
     ID             = ${ID}
@@ -82,18 +128,18 @@ scriptvendor()
 cat << EOF
 
 DISCLAIMER:
-    THIS SCRIPT COMES WITH ABSOLUTELY NO WARRANTY !!! USE AT YOUR OWN RISK !!!
-         
+${DISCLAIMER}
 
+         
 CHANGELOG:
-    2016-08-04     : (bba) initial release 
+${CHANGELOG}
 
 
 SCRIPT INFO:
-    homepage/        https://gitlab.bjoernbartels.earth/groups/shellscripts
+    homepage/        ${HOMEPAGE}
     support/bugs    
-    copyright        (c) 2016 Björn Bartels, coding@bjoernbartels.earth
-    licence          GPL-2.0
+    copyright        ${COPYRIGHT}
+    licence          ${LICENCE}
 
 EOF
 }
@@ -104,45 +150,26 @@ EOF
 scriptusage()
 {
 cat << EOF
-shellscript.base.sh, v${VERSION}
+$0 ${TITLE}, v${VERSION}
 
 USAGE: 
     $0 {arguments}
 
 
 DESCRIPTION:
-    basic script setup...
+${DESCRIPTION}
 
 
 OPTIONS:
 
-    [more to come...]
-
-    -t targetpath                target path script (default '${TARGETPATH}')
-    --target-path targetpath
-    --targetpath targetpath
-
-    -l logfile                   target path to script logfile (default '${LOGFILE}')
-    --log-file logfile
-    --logfile logfile
-
-    -T tmppath                   path for temporary file storage (default '${TMPPATH}')
-    --tmp-path tmppath 
-    --tmppath tmppath 
-
-    -n                           be non-interactive 
-    --non-interactive
-    --noninteractive
-
-    --skip-log                   do not write to script logfile, alternatives: --disable-log
-    -h                           show this message, alternatives: --help
-    -v                           verbose output, alternatives: --verbose
+${AVAILABLE_OPTIONS}
 
 
 EXAMPLES:
 
-    [more to come...]
+${EXAMPLES}
     
+
 EOF
 }
 
