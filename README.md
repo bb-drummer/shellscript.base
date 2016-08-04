@@ -27,17 +27,15 @@
 *	`--tmppath tmppath`
 
 
+
 *	`-n`    be non-interactive
 *	`--non-interactive`
 *	`--noninteractive`
-
-
 *	`--skip-log`    do not write to logfile
 *	`--disable-log`
-
 *	`-h`    show this message
 *	`--help`
-*	`-v    verbose output
+*	`-v`    verbose output
 *	`--verbose`
 
 
